@@ -23,7 +23,7 @@ const phoneNumberSchema = z.object({
 
 const languages = z.object({
   language: z.string().min(3, "Language must be greater than 3 letters"),
-  proficiency: z.number(),
+  proficiency: z.number().min(1, "Proficiency must be greater than 0"),
 });
 
 const userSchema = z.object({
@@ -105,7 +105,7 @@ const DynamicForm = () => {
                       control={form.control}
                       name={`users.${index}.name`}
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="min-h-[65px]">
                           <FormControl>
                             <FloatingLabelInput
                               {...field}
@@ -123,7 +123,7 @@ const DynamicForm = () => {
                       control={form.control}
                       name={`users.${index}.phoneNumber.primary`}
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="min-h-[65px]">
                           <FormControl>
                             <FloatingLabelInput
                               {...field}
@@ -140,7 +140,7 @@ const DynamicForm = () => {
                       control={form.control}
                       name={`users.${index}.phoneNumber.secondary`}
                       render={({ field }) => (
-                        <FormItem>
+                        <FormItem className="min-h-[65px]">
                           <FormControl>
                             <FloatingLabelInput
                               {...field}
@@ -178,8 +178,7 @@ const DynamicForm = () => {
               </div>
             ))}
           </div>
-
-          {/* Submit Button */}
+          ̥{/* Submit Button */}
           <div className="flex place-content-end">
             <Button type="submit" size={"lg"} className="w-fit">
               Submit

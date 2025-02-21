@@ -22,7 +22,7 @@ const LanguageForm = ({ control, userIndex }: LanguageFormProps) => {
   return (
     <div>
       <div>
-        <div className="p-2 flex place-content-start items-center gap-2">
+        <div className="mb-1 flex place-content-start items-center gap-2">
           <span className="text-sm">Languages</span>
           <Button
             type="button"
@@ -43,13 +43,13 @@ const LanguageForm = ({ control, userIndex }: LanguageFormProps) => {
       {/* language fields */}
       <div>
         {fields.map((field, langIndex) => (
-          <div key={field.id} className="grid grid-cols-9 gap-2 items-end">
+          <div key={field.id} className="grid grid-cols-9 gap-2">
             {/* language name */}
             <FormField
               control={control}
               name={`users.${userIndex}.languages.${langIndex}.language`}
               render={({ field }) => (
-                <FormItem className="mt-2 col-span-4 w-full">
+                <FormItem className="col-span-4 min-h-[65px]">
                   <FormControl>
                     <FloatingLabelInput
                       {...field}
@@ -66,7 +66,7 @@ const LanguageForm = ({ control, userIndex }: LanguageFormProps) => {
               control={control}
               name={`users.${userIndex}.languages.${langIndex}.proficiency`}
               render={({ field }) => (
-                <FormItem className="col-span-4">
+                <FormItem className="col-span-4 min-h-[65px]">
                   <FormControl>
                     <FloatingLabelInput
                       {...field}
